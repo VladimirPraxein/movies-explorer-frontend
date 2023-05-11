@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 74px;
+    padding: 10px 70px;
+    background: #DDDEE3;
+    box-sizing: border-box;
+}
+
+.header_active {
+    justify-content: space-between;
+    background: #FAFAFA;
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .header {
+        padding: 10px 14px;
+    }
+}

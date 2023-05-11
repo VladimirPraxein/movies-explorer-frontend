@@ -1,0 +1,149 @@
+.aboutProject {
+    background-color: #FAFAFA;
+    padding: 110px 70px;
+}
+
+.aboutProject__title {
+    font-size: 22px;
+    margin: 0 0 23px 0;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 0 0;
+    margin: 0 0 110px 0;
+    list-style: none;
+    border-top: 1px solid #000;
+}
+
+.info__item {
+    max-width: 550px;
+    margin: 0 30px 0 0;
+}
+
+.info__item:last-child {
+    margin: 0;
+}
+
+
+.info__title {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 26px 0;
+}
+
+.info__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.aboutProject__container {
+    display: flex;
+}
+
+.aboutProject__backend {
+    min-width: 228px;
+}
+
+.aboutProject__time_backend {
+    text-align: center;
+    background: #3456F3;
+    font-size: 14px;
+    color: #fff;
+    padding: 9px 14px;
+    margin: 0 0 14px 0;
+}
+
+.aboutProject__label {
+    text-align: center;
+    color: #A0A0A0;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+}
+
+.aboutProject__frontend {
+    width: 100%;
+}
+
+.aboutProject__time_frontend {
+    text-align: center;
+    background: #F2F2F2;
+    font-size: 14px;
+    color: #000;
+    padding: 9px 14px;
+    margin: 0 0 14px 0;
+}
+
+@media screen and (max-width:768px) {
+    .aboutProject {
+        padding: 90px 50px;
+    }
+
+    .info {
+        margin: 0 0 93px 0;
+    }
+
+    .info__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .aboutProject__backend {
+        min-width: 140px;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .aboutProject {
+        padding: 70px 18px;
+    }
+
+    .aboutProject__title {
+        font-size: 18px;
+    }
+
+    .info {
+        flex-direction: column;
+        padding: 60px 0 0 0;
+        margin: 0 0 60px 0;
+    }
+
+    .info__item {
+        margin: 0 0 56px 0;
+    }
+
+    .info__title {
+        font-size: 18px;
+        margin: 0 0 16px 0;
+    }
+
+    .info__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .aboutProject__backend {
+        min-width: 100px;
+    }
+
+    .aboutProject__time_backend {
+        font-size: 11px;
+        margin: 0 0 10px 0;
+    }
+
+    .aboutProject__time_frontend {
+        font-size: 11px;
+        margin: 0 0 10px 0;
+    }
+
+    .aboutProject__label {
+        font-size: 11px;
+    }
+}

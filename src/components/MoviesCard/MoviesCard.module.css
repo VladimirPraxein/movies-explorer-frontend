@@ -1,0 +1,76 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 18px 0;
+}
+
+.card__header {
+    display: flex;
+    padding: 0 18px;
+    margin: 0 0 18px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__name {
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0 10px 0 0;
+}
+
+.card__time {
+    color: #A0A0A0;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+}
+
+.card__image {
+    width: 100%;
+    margin: 0 0 18px 0;
+}
+
+.card__save {
+    background: #F4F4F4;
+    border-radius: 30px;
+    padding: 9px 15px;
+    font-weight: 400;
+    font-size: 12px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.card__delete {
+    background: #F4F4F4;
+    border-radius: 30px;
+    padding: 9px 15px;
+    font-weight: 400;
+    font-size: 12px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    width: 100px;
+}
+
+@media screen and (max-width:425px) {
+    .card {
+        padding: 14px 0;
+    }
+
+    .card__header {
+        padding: 0 14px;
+        margin: 0 0 14px 0;
+    }
+
+    .card__name {
+        font-size: 12px;
+    }
+
+    .card__time {
+        font-size: 10px;
+    }
+}

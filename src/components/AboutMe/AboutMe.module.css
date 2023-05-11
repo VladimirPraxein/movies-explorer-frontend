@@ -1,0 +1,131 @@
+.aboutMe {
+    padding: 110px 70px 100px;
+    background: #FAFAFA;
+}
+
+.aboutMe__title {
+    font-size: 22px;
+    margin: 0 0 23px 0;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 66px 0 0 0;
+    border-top: 1px solid #000;
+}
+
+.container__info {
+    max-width: 600px;
+    padding: 0 30px 0 0;
+}
+
+.container__name {
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: -0.04em;
+    margin: 0 0 18px 0;
+}
+
+.container__work {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 26px 0;
+}
+
+.container__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 100px 0;
+}
+
+.container__link {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+
+.container__image {
+    align-self: flex-start;
+}
+
+@media screen and (max-width:768px) {
+    .aboutMe {
+        padding: 90px 50px;
+    }
+
+    .container__name {
+        font-size: 40px;
+    }
+
+    .container__work {
+        font-size: 12px;
+    }
+
+    .container__text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0 0 87px 0;
+    }
+
+    .container__info {
+        padding: 0 49px 0 0;
+    }
+
+    .container__image {
+        width: 255px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0 0 0;
+    }
+
+    .container__info {
+        padding: 0;
+        order: 1;
+    }
+
+    .container__text {
+        margin: 0 0 40px 0;
+    }
+
+    .container__image {
+        order: -1;
+        width: 292px;
+        margin: 0 auto 40px auto;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .aboutMe {
+        padding: 70px 14px;
+    }
+
+    .aboutMe__title {
+        font-size: 18px;
+        margin: 0 0 28px 0;
+    }
+
+    .container__name {
+        font-size: 30px;
+    }
+
+    .container__work {
+        font-size: 11px;
+        margin: 0 0 20px 0;
+    }
+
+    .container__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
