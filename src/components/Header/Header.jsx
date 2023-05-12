@@ -6,7 +6,7 @@ import header_logo from '../../images/header_logo.svg'
 
 import styles from './Header.module.css';
 
-let loggedIn = false;
+let loggedIn = true;
 
 export default function Header() {
     return (

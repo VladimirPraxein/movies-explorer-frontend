@@ -14,7 +14,7 @@ export default function AboutMe() {
                         и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ
                         Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
                     </p>
-                    <a className={styles.container__link} href='https://github.com/VladimirPraxein'>Github</a>
+                    <a className={styles.container__link} href='https://github.com/VladimirPraxein' target='_blank'>Github</a>
                 </div>
                 <img className={styles.container__image} src={author} alt="Фото автора" />
             </div>

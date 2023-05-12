@@ -14,6 +14,7 @@ export default function Login() {
                         type="text"
                         className={styles.login__input}
                         name="email"
+                        required
                     />
                     <span className={styles.register__err_email}></span>
                 </div>
@@ -23,6 +24,7 @@ export default function Login() {
                         type="password"
                         className={styles.login__input}
                         name="password"
+                        required
                     />
                     <span className={styles.register__err_password}>Что-то пошло не так...</span>
                 </div>

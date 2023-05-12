@@ -4,7 +4,7 @@ import delete_icon from '../../images/delete_icon.svg';
 
 export default function MoviesCard({ pageMovies }) {
     return (
-        <div className={styles.card}>
+        <li className={styles.card}>
             <div className={styles.card__header}>
                 <h3 className={styles.card__name}>В погоне за Бенкси</h3>
                 <p className={styles.card__time}>27 минут</p>
@@ -18,6 +18,6 @@ export default function MoviesCard({ pageMovies }) {
                 </button>
             }
 
-        </div >
+        </li >
     )
 }

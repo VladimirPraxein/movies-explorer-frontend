@@ -41,6 +41,11 @@
     margin: 0 auto;
     display: block;
     cursor: pointer;
+    transition: 0.8s;
+}
+
+.card__save:hover {
+    opacity: 0.8;
 }
 
 .card__delete {
@@ -54,6 +59,11 @@
     display: block;
     cursor: pointer;
     width: 100px;
+    transition: 0.8s;
+}
+
+.card__delete:hover {
+    opacity: 0.8;
 }
 
 @media screen and (max-width:425px) {

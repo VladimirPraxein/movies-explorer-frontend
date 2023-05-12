@@ -14,6 +14,7 @@ export default function Register() {
                         type="text"
                         className={styles.regiser__input}
                         name="name"
+                        required
                     />
                     <span className={styles.register__err_name}></span>
                 </div>
@@ -23,6 +24,7 @@ export default function Register() {
                         type="text"
                         className={styles.regiser__input}
                         name="email"
+                        required
                     />
                     <span className={styles.register__err_email}></span>
                 </div>
@@ -32,6 +34,7 @@ export default function Register() {
                         type="password"
                         className={styles.regiser__input}
                         name="password"
+                        required
                     />
                     <span className={styles.register__err_password}>Что-то пошло не так...</span>
                 </div>

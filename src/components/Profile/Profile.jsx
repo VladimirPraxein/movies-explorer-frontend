@@ -15,12 +15,14 @@ export default function Profile() {
                         className={`${styles.profile__input} ${styles.profile__name}`}
                         name="name"
                         placeholder='Имя'
+                        required
                     />
                     <input
                         type="text"
                         className={`${styles.profile__input} ${styles.profile__email}`}
                         name="email"
                         placeholder='E-mail'
+                        required
                     />
                 </form>
                 <button className={styles.profile__edit} type="button">Редактировать</button>

@@ -8,10 +8,10 @@ export default function Footer() {
                 <p className={styles.container__year}>© 2020</p>
                 <ul className={styles.container__list}>
                     <li className={styles.container__item}>
-                        <a className={styles.container__link} href='https://practicum.yandex.ru/'>Яндекс.Практикум</a>
+                        <a className={styles.container__link} href='https://practicum.yandex.ru/' target='_blank'>Яндекс.Практикум</a>
                     </li>
                     <li className={styles.container__item}>
-                        <a className={styles.container__link} href='https://github.com/VladimirPraxein'>Github</a>
+                        <a className={styles.container__link} href='https://github.com/VladimirPraxein' target='_blank'>Github</a>
                     </li>
                 </ul>
             </div>

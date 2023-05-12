@@ -47,6 +47,11 @@
     font-size: 14px;
     color: #000;
     text-decoration: none;
+    transition: 0.8s;
+}
+
+.container__link:hover {
+    opacity: 0.7;
 }
 
 .container__image {

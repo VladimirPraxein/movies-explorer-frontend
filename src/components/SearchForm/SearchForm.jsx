@@ -14,8 +14,9 @@ export default function SearchForm() {
                     type="text"
                     className={styles.search__input}
                     name="search"
+                    required
                 />
-                <button className={styles.search__button} type="button">
+                <button className={styles.search__button} type="submit">
                     <img src={search_white} className={styles.search__icon_white}></img>
                 </button>
                 <FilterCheckbox></FilterCheckbox>

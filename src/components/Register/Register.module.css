@@ -43,8 +43,11 @@
 }
 
 .regiser__input:focus {
-    outline: none;
-    border: none;
+    outline-color: #000;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 8px;
+    border-bottom: none;
 }
 
 .register__err_password {
