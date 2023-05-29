@@ -47,7 +47,7 @@ label:after {
     transition: 0.3s;
 }
 
-input:checked+label:after {
+.checkbox_active:after {
     left: calc(100% - 2px);
     transform: translateX(-100%);
     background: #2BE080;

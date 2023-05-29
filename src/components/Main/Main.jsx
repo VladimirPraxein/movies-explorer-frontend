@@ -1,18 +1,16 @@
 import React from 'react';
 
+import Layout from '../Layout/Layout';
 import Promo from '../Promo/Promo';
 import NavTab from '../NavTab/NavTab';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Portfolio from '../Portfolio/Portfolio';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 
-export default function Main() {
+export default function Main({loggedIn}) {
     return (
-        <React.Fragment>
-            <Header></Header>
+        <Layout loggedIn={loggedIn} available={true}>
             <main>
                 <Promo></Promo>
                 <NavTab></NavTab>
@@ -21,7 +19,6 @@ export default function Main() {
                 <AboutMe></AboutMe>
                 <Portfolio></Portfolio>
             </main>
-            <Footer></Footer>
-        </React.Fragment>
+        </Layout>
     )
 }

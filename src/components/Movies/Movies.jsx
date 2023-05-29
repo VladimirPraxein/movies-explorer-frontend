@@ -1,19 +1,30 @@
 import React from "react"
 
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
+import Layout from "../Layout/Layout"
 import MoviesCardList from "../MoviesCardList/MoviesCardList"
 import SearchForm from "../SearchForm/SearchForm"
 
-export default function Movies() {
+export default function Movies({ onSearchMovies, isFilteredMovies, filteredMovies, setFilteredMovies, errorMovies, onSaveMovie, savedMovies, onDeleteMovie, loggedIn, onChangeMoviesOnPage, amountMovies, onShowMoreMovies }) {
+
     return (
-        <React.Fragment>
-            <Header></Header>
+        <Layout loggedIn={loggedIn} available={true}>
             <main>
-                <SearchForm></SearchForm>
-                <MoviesCardList pageMovies={true}></MoviesCardList>
+                <SearchForm pageMovies={true} onSearchMovies={onSearchMovies} onChangeMoviesOnPage={onChangeMoviesOnPage}></SearchForm>
+                <MoviesCardList
+                    pageMovies={true}
+                    isFilteredMovies={isFilteredMovies}
+                    filteredMovies={filteredMovies}
+                    setFilteredMovies={setFilteredMovies}
+                    errorMovies={errorMovies}
+                    amountMovies={amountMovies}
+                    onChangeMoviesOnPage={onChangeMoviesOnPage}
+                    onSaveMovie={onSaveMovie}
+                    savedMovies={savedMovies}
+                    onDeleteMovie={onDeleteMovie}
+                    onShowMoreMovies={onShowMoreMovies}
+                >
+                </MoviesCardList>
             </main>
-            <Footer></Footer>
-        </React.Fragment>
+        </Layout>
     )
 }

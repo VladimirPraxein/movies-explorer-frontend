@@ -1,7 +1,9 @@
 import styles from './Footer.module.css';
 
-export default function Footer() {
+export default function Footer({ available }) {
     return (
+        available
+        &&
         <footer className={styles.footer}>
             <h2 className={styles.footer__title}>Учебный проект Яндекс.Практикум х BeatFilm.</h2>
             <div className={styles.container}>

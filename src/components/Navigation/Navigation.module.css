@@ -24,6 +24,14 @@
 }
 
 .navigation__films {
+    font-weight: 400;
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 16px 0 0;
+}
+
+.navigation__films_active {
     font-weight: 500;
     font-size: 13px;
     color: #000;
@@ -33,6 +41,13 @@
 
 .navigation__savedFilms {
     font-weight: 400;
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+}
+
+.navigation__savedFilms_active {
+    font-weight: 500;
     font-size: 13px;
     color: #000;
     text-decoration: none;
@@ -188,15 +203,36 @@
         text-decoration: none;
     }
 
+    .navigation__main_active {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+        text-decoration: underline;
+    }
+
     .navigation__films {
         font-weight: 500;
         font-size: 18px;
         margin: 0 0 28px 0;
     }
 
+    .navigation__films_active {
+        font-weight: 500;
+        font-size: 18px;
+        margin: 0 0 28px 0;
+        text-decoration: underline;
+    }
+
     .navigation__savedFilms {
         font-weight: 500;
         font-size: 18px;
+    }
+
+    .navigation__savedFilms_active {
+        font-weight: 500;
+        font-size: 18px;
+        text-decoration: underline;
     }
 }
 

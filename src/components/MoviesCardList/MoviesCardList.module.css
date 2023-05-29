@@ -3,6 +3,14 @@
     background: #FAFAFA;
 }
 
+.cards__text {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    background: #FAFAFA;
+    padding: 0 70px 20px;
+}
+
 .cards__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 360px);
@@ -36,11 +44,15 @@
     .cards {
         padding: 0 30px 80px 30px;
     }
-    
+
     .cards__list {
         grid-template-columns: repeat(auto-fit, 342px);
         row-gap: 35px;
         column-gap: 24px;
+    }
+
+    .cards__text {
+        padding: 0 30px 20px;
     }
 }
 
@@ -48,6 +60,12 @@
     .cards {
         padding: 0 10px 80px 10px;
     }
+
+    .cards__text {
+        padding: 0 10px 20px;
+        font-size: 14px;
+    }
+
 
     .cards__list {
         grid-template-columns: repeat(auto-fit, 300px);

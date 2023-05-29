@@ -52,7 +52,18 @@
     border: none;
     padding: 0;
     margin: 0 0 16px 0;
+    color: #cfcfcf;
+}
+
+.profile__edit_active {
+    font-weight: 400;
+    font-size: 13px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 16px 0;
     cursor: pointer;
+    color: #000;
 }
 
 .profile__exit {
@@ -63,6 +74,30 @@
     padding: 0;
     cursor: pointer;
     color: #EE3465;
+}
+
+.profile__err {
+    font-weight: 400;
+    font-size: 10px;
+    margin: 10px 0 0 0;
+    color: #EE3465;
+    display: block;
+}
+
+.profile__errApi {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #EE3465;
+    display: block;
+}
+
+.profile__success {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #348bee;
+    display: block;
 }
 
 @media screen and (max-width:576px) {
