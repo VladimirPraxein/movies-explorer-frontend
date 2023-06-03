@@ -15,6 +15,10 @@
     display: none;
 }
 
+.navigation__main_active {
+    display: none;
+}
+
 .navigation__item {
     transition: 0.8s;
 }
