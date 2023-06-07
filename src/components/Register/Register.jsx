@@ -8,8 +8,8 @@ export default function Register({ onRegister, errorRegister }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorEmail, setErrorEmail] = useState(false);
-    const [errorName, setErrorName] = useState(false);
+    const [errorEmail, setErrorEmail] = useState('');
+    const [errorName, setErrorName] = useState('');
     const [disabledButton, setDisabledButton] = useState(true);
 
     useEffect(() => {
@@ -27,18 +27,22 @@ export default function Register({ onRegister, errorRegister }) {
 
     function handleChangeEmail(e) {
         if (!/\S+@\S+\.\S+/.test(e.target.value)) {
-            setErrorEmail(true);
+            setErrorEmail('Введите корректный email');
         } else {
-            setErrorEmail(false);
+            setErrorEmail('');
         }
         setEmail(e.target.value);
     };
 
     function handleChangeName(e) {
         if (/[^a-zа-яё\- ]/iu.test(e.target.value)) {
-            setErrorName(true);
+            setErrorName('Можно использовать только латиницу, кириллицу, пробел или дефис');
+        } else if (e.target.value.length < 2) {
+            setErrorName('Минимальная длина 2 символа');
+        } else if (e.target.value.length > 30) {
+            setErrorName('Максимальная длина 30 символов');
         } else {
-            setErrorName(false);
+            setErrorName('');
         }
         setName(e.target.value);
     };
@@ -60,7 +64,7 @@ export default function Register({ onRegister, errorRegister }) {
                         value={name}
                         onChange={handleChangeName}
                     />
-                    {errorName && <span className={styles.register__err}>Что-то пошло не так...</span>}
+                    {errorName && <span className={styles.register__err}>{errorName}</span>}
                 </div>
                 <div className={styles.regiser__container}>
                     <span className={styles.regiser__placeholder}>E-mail</span>
@@ -72,7 +76,7 @@ export default function Register({ onRegister, errorRegister }) {
                         value={email}
                         onChange={handleChangeEmail}
                     />
-                    {errorEmail && <span className={styles.register__err}>Что-то пошло не так...</span>}
+                    {errorEmail && <span className={styles.register__err}>{errorEmail}</span>}
                 </div>
                 <div className={styles.regiser__container}>
                     <span className={styles.regiser__placeholder}>Пароль</span>

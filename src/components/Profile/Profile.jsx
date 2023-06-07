@@ -10,10 +10,10 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
     const currentUser = useContext(CurrentUserContext);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [errorEmail, setErrorEmail] = useState(false);
-    const [errorName, setErrorName] = useState(false);
+    const [errorEmail, setErrorEmail] = useState('');
+    const [errorName, setErrorName] = useState('');
     const [disabledButton, setDisabledButton] = useState(true);
-
+    console.log(currentUser)
     useEffect(() => {
         if (errorEmail || errorName || !name || !email || (name === currentUser.name && email === currentUser.email)) {
             setDisabledButton(true)
@@ -28,10 +28,10 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
     }
 
     function handleChangeEmail(e) {
-        if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(e.target.value)) {
-            setErrorEmail(true);
+        if (!/\S+@\S+\.\S+/.test(e.target.value)) {
+            setErrorEmail('Введите корректный email');
         } else {
-            setErrorEmail(false);
+            setErrorEmail('');
         }
         setSuccesUpdateUser('');
         setErrorUpdateUser('');
@@ -40,9 +40,13 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
 
     function handleChangeName(e) {
         if (/[^a-zа-яё\- ]/iu.test(e.target.value)) {
-            setErrorName(true);
+            setErrorName('Можно использовать только латиницу, кириллицу, пробел или дефис');
+        } else if (e.target.value.length < 2) {
+            setErrorName('Минимальная длина 2 символа');
+        } else if (e.target.value.length > 30) {
+            setErrorName('Максимальная длина 30 символов');
         } else {
-            setErrorName(false);
+            setErrorName('');
         }
         setSuccesUpdateUser('');
         setErrorUpdateUser('');
@@ -61,8 +65,9 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
                         placeholder='Имя'
                         required
                         onChange={handleChangeName}
+                        defaultValue={currentUser.name}
                     />
-                    {errorName && <span className={styles.profile__err}>Что-то пошло не так...</span>}
+                    {errorName && <span className={styles.profile__err}>{errorName}</span>}
                     <input
                         type="text"
                         className={`${styles.profile__input} ${styles.profile__email}`}
@@ -70,8 +75,9 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
                         placeholder='E-mail'
                         required
                         onChange={handleChangeEmail}
+                        defaultValue={currentUser.email}
                     />
-                    {errorEmail && <span className={styles.profile__err}>Что-то пошло не так...</span>}
+                    {errorEmail && <span className={styles.profile__err}>{errorEmail}</span>}
                 </form>
                 {errorUpdateUser && <span className={styles.profile__errApi}>{errorUpdateUser}</span>}
                 {succesUpdateUser && <span className={styles.profile__success}>{succesUpdateUser}</span>}

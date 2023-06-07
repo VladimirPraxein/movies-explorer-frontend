@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export default function Login({ onLogin, errorLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorEmail, setErrorEmail] = useState(false);
+    const [errorEmail, setErrorEmail] = useState('');
     const [disabledButton, setDisabledButton] = useState(true);
 
     useEffect(() => {
@@ -25,9 +25,9 @@ export default function Login({ onLogin, errorLogin }) {
 
     function handleChangeEmail(e) {
         if (!/\S+@\S+\.\S+/.test(e.target.value)) {
-            setErrorEmail(true);
+            setErrorEmail('Введите корректный email');
         } else {
-            setErrorEmail(false);
+            setErrorEmail('');
         }
         setEmail(e.target.value);
     };
@@ -49,7 +49,7 @@ export default function Login({ onLogin, errorLogin }) {
                         value={email}
                         onChange={handleChangeEmail}
                     />
-                    {errorEmail && <span className={styles.login__err_email}>Что-то пошло не так...</span>}
+                    {errorEmail && <span className={styles.login__err_email}>{errorEmail}</span>}
                 </div>
                 <div className={styles.login__container}>
                     <span className={styles.login__placeholder}>Пароль</span>
