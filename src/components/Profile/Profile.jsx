@@ -13,7 +13,7 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
     const [errorEmail, setErrorEmail] = useState('');
     const [errorName, setErrorName] = useState('');
     const [disabledButton, setDisabledButton] = useState(true);
-    console.log(currentUser)
+
     useEffect(() => {
         if (errorEmail || errorName || !name || !email || (name === currentUser.name && email === currentUser.email)) {
             setDisabledButton(true)

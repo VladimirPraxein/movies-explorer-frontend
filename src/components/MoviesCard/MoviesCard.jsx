@@ -29,14 +29,16 @@ export default function MoviesCard({ pageMovies, movie, onSaveMovie, savedMovies
 
         setIsSaved(false);
     }
-
+    console.log(movie.trailerLink)
     return (
         <li className={styles.card}>
             <div className={styles.card__header}>
                 <h3 className={styles.card__name}>{movie.nameRU}</h3>
                 <p className={styles.card__time}>{movie.duration}</p>
             </div>
-            <img className={styles.card__image} src={pageMovies ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image} alt='Постер фильма'></img>
+            <a className={styles.card__link} href={movie.trailerLink} target='_blank'>
+                <img className={styles.card__image} src={pageMovies ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image} alt='Постер фильма'></img>
+            </a>
             {pageMovies ?
                 !isSaved ?
                     <button className={styles.card__save} type='submit' onClick={saveMovie}>Сохранить</button>
