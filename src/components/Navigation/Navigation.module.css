@@ -6,7 +6,7 @@
 
 .navigation__container {
     display: flex;
-    margin: 0 28vw 0 0;
+    margin: 0 370px 0 0;
     list-style: none;
     padding: 0;
 }
@@ -137,6 +137,12 @@
     transform: rotate(-405deg);
 }
 
+
+@media screen and (max-width:1280px) {
+    .navigation__container {
+        margin: 0 26vw 0 0;
+    }
+}
 
 @media screen and (max-width:1024px) {
     .container {

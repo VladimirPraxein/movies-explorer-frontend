@@ -34,7 +34,9 @@ export default function Login({ onLogin, errorLogin }) {
 
     return (
         <div className={styles.login}>
-            <img src={header_logo} className={styles.login__logo} alt="" />
+            <Link to="/" className={styles.login__logo}>
+                <img src={header_logo} alt="" />
+            </Link>
             <h2 className={styles.login__title}>Рады видеть!</h2>
             <form action="#" name='login' className={styles.login__form}>
                 <div className={styles.login__container}>
