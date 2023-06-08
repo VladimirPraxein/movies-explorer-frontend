@@ -305,7 +305,7 @@ function App() {
                   errorLogin={errorLogin}>
                 </ProtectedRoute>}>
               </Route>
-              <Route path='/404' exact element={<NotFound />}>
+              <Route path='*' exact element={<NotFound />}>
               </Route>
             </Routes>
         }
