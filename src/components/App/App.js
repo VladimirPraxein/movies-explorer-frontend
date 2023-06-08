@@ -14,6 +14,7 @@ import NotFound from '../NotFound/NotFound';
 import Preloader from '../Preloader/Preloader';
 
 import { serverError, conflict, loginError } from '../../utils/errorMessages';
+import { maxDurationShortMovies, widthScreen, numberCards, addedCards } from '../../utils/constants';
 
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
@@ -181,7 +182,7 @@ function App() {
     setIsFilteredSavedMovies(true)
     let foundMovies = savedMovies.filter((movie) =>
       movie.nameRU.toLowerCase().includes(nameMovie.toLowerCase()));
-    let shortMovies = foundMovies.filter((movie) => movie.duration <= 40);
+    let shortMovies = foundMovies.filter((movie) => movie.duration <= maxDurationShortMovies);
     if (checkbox) {
       foundMovies = shortMovies;
     }
@@ -193,7 +194,6 @@ function App() {
     mainApi.saveMovie(movie)
       .then((movie) => {
         setSavedMovies([...savedMovies, movie]);
-        console.log(savedMovies)
       })
       .catch((err) => {
         console.log(err);
@@ -201,34 +201,30 @@ function App() {
   }
 
   function handleDeleteMovie(movie) {
-
     mainApi.deleteMovie(movie._id)
-
       .then(() => {
-
         setSavedMovies(savedMovies.filter((savedMovie) => savedMovie._id !== movie._id));
       })
       .catch((err) => {
-        console.log(movie)
         console.log(err);
       });
   }
 
   function handleChangeMoviesOnPage() {
-    if (window.innerWidth < 890) {
-      setAmoutnMovies(5);
-    } else if (window.innerWidth < 1280) {
-      setAmoutnMovies(8);
+    if (window.innerWidth < widthScreen.forPhones) {
+      setAmoutnMovies(numberCards.forPhones);
+    } else if (window.innerWidth < widthScreen.forLaptops) {
+      setAmoutnMovies(numberCards.forLaptops);
     } else {
-      setAmoutnMovies(12);
+      setAmoutnMovies(numberCards.forComputers);
     }
   };
 
   function handleShowMoreMovies() {
-    if (window.innerWidth < 1280) {
-      setAmoutnMovies(amountMovies + 2)
+    if (window.innerWidth < widthScreen.forLaptops) {
+      setAmoutnMovies(amountMovies + addedCards.forLaptops)
     } else {
-      setAmoutnMovies(amountMovies + 3)
+      setAmoutnMovies(amountMovies + addedCards.forComputers)
     }
   }
 

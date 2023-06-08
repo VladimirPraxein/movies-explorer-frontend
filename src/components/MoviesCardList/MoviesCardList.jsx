@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import styles from './MoviesCardList.module.css';
 
+import { timeResizeScreen } from '../../utils/constants';
+
 export default function MoviesCardList({
     pageMovies,
     isFilteredMovies,
@@ -20,7 +22,7 @@ export default function MoviesCardList({
         if (pageMovies) {
             let timer;
             const handleChangeWidthScreenTimer = () => {
-                timer = setTimeout(onChangeMoviesOnPage, 500);
+                timer = setTimeout(onChangeMoviesOnPage, timeResizeScreen);
             };
             window.addEventListener("resize", handleChangeWidthScreenTimer);
             return () => {
