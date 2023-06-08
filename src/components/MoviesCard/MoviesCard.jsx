@@ -29,7 +29,7 @@ export default function MoviesCard({ pageMovies, movie, onSaveMovie, savedMovies
 
         setIsSaved(false);
     }
-    console.log(movie.trailerLink)
+
     return (
         <li className={styles.card}>
             <div className={styles.card__header}>

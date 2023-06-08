@@ -62,7 +62,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            navigate({replace: false});
+            navigate({ replace: false });
           }
         })
         .catch((e) => console.log(e))
@@ -245,6 +245,7 @@ function App() {
               </Route>
               <Route path='/movies'
                 element={<ProtectedRoute
+                  pageLogin={false}
                   component={Movies}
                   movies={movies}
                   onSearchMovies={handleSearchMovies}
@@ -263,6 +264,7 @@ function App() {
               </Route>
               <Route path='/saved-movies'
                 element={<ProtectedRoute
+                  pageLogin={false}
                   component={SavedMovies}
                   loggedIn={loggedIn}
                   savedMovies={savedMovies}
@@ -274,6 +276,7 @@ function App() {
               </Route>
               <Route path='/profile'
                 element={<ProtectedRoute
+                  pageLogin={false}
                   component={Profile}
                   loggedIn={loggedIn}
                   onUpdateUser={handleUpdateUser}
@@ -284,9 +287,23 @@ function App() {
                   signOut={signOut}>
                 </ProtectedRoute>}>
               </Route>
-              <Route path='/signup' exact element={<Register onRegister={handleRegister} errorRegister={errorRegister} />}>
+              <Route path='/signup'
+                element={<ProtectedRoute
+                  pageLogin={true}
+                  loggedIn={loggedIn}
+                  component={Register}
+                  onRegister={handleRegister}
+                  errorRegister={errorRegister}>
+                </ProtectedRoute>}>
               </Route>
-              <Route path='/signin' exact element={<Login onLogin={handleLogin} errorLogin={errorLogin} />}>
+              <Route path='/signin'
+                element={<ProtectedRoute
+                  pageLogin={true}
+                  loggedIn={loggedIn}
+                  component={Login}
+                  onLogin={handleLogin}
+                  errorLogin={errorLogin}>
+                </ProtectedRoute>}>
               </Route>
               <Route path='/404' exact element={<NotFound />}>
               </Route>
