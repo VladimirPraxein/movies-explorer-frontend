@@ -25,6 +25,7 @@ export default function Profile({ loggedIn, onUpdateUser, errorUpdateUser, setEr
     function handleSubmit(e) {
         e.preventDefault();
         onUpdateUser(name, email);
+        setDisabledButton(true);
     }
 
     function handleChangeEmail(e) {

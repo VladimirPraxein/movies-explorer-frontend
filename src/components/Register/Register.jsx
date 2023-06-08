@@ -23,6 +23,7 @@ export default function Register({ onRegister, errorRegister }) {
     function handleSubmit(e) {
         e.preventDefault();
         onRegister(name, password, email);
+        setDisabledButton(true);
     }
 
     function handleChangeEmail(e) {

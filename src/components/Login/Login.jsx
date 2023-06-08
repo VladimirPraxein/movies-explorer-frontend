@@ -21,6 +21,7 @@ export default function Login({ onLogin, errorLogin }) {
     function handleSubmit(e) {
         e.preventDefault();
         onLogin(password, email);
+        setDisabledButton(true);
     }
 
     function handleChangeEmail(e) {
